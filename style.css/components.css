@@ -1,0 +1,230 @@
+/* =========================================
+   1. GLOBAL GLASS & CONTAINER
+   ========================================= */
+/* সব মেইন কন্টেইনারে গ্লাস ইফেক্ট অ্যাপ্লাই করা হলো */
+.card, .header, .sidebar, .sidebar-left, .sidebar-right, .bottom-nav, .modal-box {
+    background: var(--bg-surface);
+    backdrop-filter: var(--blur-strength);
+    -webkit-backdrop-filter: var(--blur-strength);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   2. CARDS (Neon Hover Effect)
+   ========================================= */
+.card {
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* কার্ডে মাউস নিলে বর্ডার এবং শ্যাডো জ্বলবে */
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); /* Blue Glow */
+}
+
+.card-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+/* =========================================
+   3. BUTTONS (Glowing & Futuristic)
+   ========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid transparent;
+    border-radius: 50px; /* ক্যাপসুল শেপ */
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    gap: 8px;
+}
+
+/* Primary Neon Button */
+.btn-primary, .btn-task {
+    background: var(--brand-primary);
+    color: #000; /* ডার্ক মোডে নীল ব্যাকগ্রাউন্ডে কালো লেখা ভালো ফুটে */
+    box-shadow: 0 0 15px var(--brand-primary); /* নিয়ন গ্লো */
+}
+
+.btn-primary:hover {
+    background: var(--brand-secondary);
+    color: white;
+    box-shadow: 0 0 25px var(--brand-primary);
+    transform: scale(1.05);
+}
+
+/* Outline Button (Glassy) */
+.btn-outline {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+.btn-outline:hover {
+    background: var(--brand-primary);
+    color: #000;
+    box-shadow: 0 0 15px var(--brand-primary);
+}
+
+/* Gold/Premium Button */
+.btn-gold, .btn-buy {
+    background: var(--brand-accent);
+    color: #000;
+    box-shadow: 0 0 15px var(--brand-accent);
+}
+
+.btn-disabled, .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* =========================================
+   4. FORMS (Glass Inputs)
+   ========================================= */
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.2); /* ডার্ক ট্রান্সপারেন্ট */
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: 0.3s;
+    outline: none;
+}
+
+/* ফোকাস করলে ইনপুট বক্স জ্বলবে */
+input:focus, textarea:focus, select:focus {
+    border-color: var(--brand-primary);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================
+   5. NAVIGATION & BADGES
+   ========================================= */
+/* Active Sidebar Link (Glow Effect) */
+.menu-item.active, aside nav a.active {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--brand-primary);
+    border-left: 3px solid var(--brand-primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.badge {
+    background: var(--brand-accent);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 8px var(--brand-accent);
+}
+
+/* =========================================
+   6. SCROLLBAR (Custom Neon)
+   ========================================= */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-primary); /* হোভারে নীল হবে */
+}
+
+/* =========================================
+   7. MODAL & UTILITIES
+   ========================================= */
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal {
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    /* Glass Effect from Section 1 applied via class usually, adding specific here just in case */
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: var(--radius);
+}
+
+/* Grid Layouts */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Helpers */
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+.mt-2 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+/* =========================================
+   8. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        padding: 1.2rem;
+    }
+    .btn {
+        width: 100%; /* মোবাইলে বাটন ফুল উইডথ */
+        margin-bottom: 10px;
+    }
+}
