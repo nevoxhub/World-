@@ -1,0 +1,55 @@
+/* 1. Global Dimensions (সবার জন্য এক) */
+:root {
+    --header-h: 65px;
+    --sidebar-w: 260px;
+    --radius: 16px; /* গ্লাস ইফেক্টের জন্য একটু বেশি রাউন্ডেড */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. DARK THEME (Default - Neon Cyber Glass) */
+:root, [data-theme="dark"] {
+    /* Neon Colors */
+    --brand-primary: #00f2ea;   /* Neon Cyan */
+    --brand-secondary: #7c3aed; /* Neon Purple */
+    --brand-accent: #ffd700;    /* Gold/Spark */
+    
+    /* Neon Glow Effect (Text & Box Shadow) */
+    --neon-glow: 0 0 15px rgba(0, 242, 234, 0.4);
+    
+    /* Backgrounds */
+    --bg-body: #050505;         /* Deepest Black */
+    --bg-surface: rgba(30, 30, 30, 0.6); /* Dark See-through Glass */
+    --bg-glass: rgba(0, 0, 0, 0.8);      /* Heavy Glass */
+
+    /* Text & Borders */
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --border: rgba(255, 255, 255, 0.1); /* White transparent border */
+    
+    /* Glass Blur Strength */
+    --blur-strength: blur(20px);
+}
+
+/* 3. LIGHT THEME (Frosty Crystal Glass) */
+[data-theme="light"] {
+    /* Vivid Colors for Light Mode */
+    --brand-primary: #2563eb;   /* Deep Blue */
+    --brand-secondary: #4f46e5; /* Indigo */
+    --brand-accent: #f59e0b;    /* Orange Gold */
+
+    /* Subtle Glow */
+    --neon-glow: 0 4px 15px rgba(37, 99, 235, 0.2);
+
+    /* Backgrounds */
+    --bg-body: #f0f4f8;         /* Ice White */
+    --bg-surface: rgba(255, 255, 255, 0.65); /* White Frosted Glass */
+    --bg-glass: rgba(255, 255, 255, 0.85);
+
+    /* Text & Borders */
+    --text-main: #1e293b;       /* Dark Slate */
+    --text-muted: #64748b;
+    --border: rgba(0, 0, 0, 0.08); /* Black transparent border */
+
+    /* Glass Blur Strength */
+    --blur-strength: blur(25px);
+}
